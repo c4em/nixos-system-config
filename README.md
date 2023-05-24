@@ -1,3 +1,4 @@
+### Old Hyprland config can be found [here](https://github.com/c4em/nixos-system-config/tree/deprecated)
 # nixos-system-config
 Modular NixOS configuration with dotfiles. 
 ## Usage
