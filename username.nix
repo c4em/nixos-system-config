@@ -1,2 +1,2 @@
-# Select user from the ./users/ directory
+# Select the user from the ./users directory
 "user"
