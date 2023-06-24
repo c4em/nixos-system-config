@@ -10,16 +10,15 @@
     };
 
     outputs = { self, nixpkgs, ... }@attrs: let
-        user = import ./username.nix;
+        user = "user"; # Select user from `./users` directory
     in {
         # Debugging VM configuration
         nixosConfigurations.qemu-vm = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
+            specialArgs = attrs;
             modules = [ 
                 ./users/${user}.nix
-                ./common.nix
                 ./systems/qemu-vm.nix
-                ./systems/hardware/qemu-vm.nix
             ];
         };
     };
