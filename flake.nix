@@ -12,6 +12,15 @@
     outputs = { self, nixpkgs, ... }@attrs: let
         user = "user"; # Select user from `./users` directory
     in {
+        nixosConfigurations.homeserver = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = attrs;
+            modules = [ 
+                ./users/${user}.nix
+                ./systems/homeserver.nix
+            ];
+        };
+
         # Debugging VM configuration
         nixosConfigurations.qemu-vm = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";

@@ -24,7 +24,6 @@
                 set number
                 set relativenumber
                 set nobackup
-                set undofile
                 set scrolloff=8
                 set sidescrolloff=8
                 set fileencoding='utf-8'

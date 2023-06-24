@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
     users.users.user = {
         isNormalUser = true;
-        initialPassword = "ReplaceMe";
+        passwordFile = "/nix/config/pw"; # mkpasswd in config dir 
         description = "user";
         extraGroups = [
             "wheel"
