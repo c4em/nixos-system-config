@@ -1,41 +1,41 @@
-### Old Hyprland config can be found [here](https://github.com/c4em/nixos-system-config/tree/deprecated)
 # nixos-system-config
-Modular NixOS configuration with dotfiles. 
-## Usage
-You should have basic knowledge of NixOS before using this project. Begin at `configuration.nix` and read through the files by following imports. 
-Everything should be commented. If something is not satisfactory, feel free to open up an issue or pull request.
+Modular multi-purpose NixOS configuration.
+
+## About
+Feel free to do whatever with this configuration.  
+This configuration [erases your darlings](https://grahamc.com/blog/erase-your-darlings/) using ZFS snapshots.  
+Currently only used for my homeserver, [desktop runs on Gentoo](https://git.dirae.org/caem/dotfiles).  
+
 ## Layout
 ```
-/etc/nixos/
-├── configuration.nix             ; master configuration file
-├── environments                  ; Desktop environment specific config
-│   └── plasma.nix
-├── hardware-configuration.nix    ; Replace this with your current hardware-configuration.nix
-├── overlays                      ; Package overlays
-├── packages                      ; Package specifix configuration
-├── profile.nix                   ; Specify the profile to use
-├── profiles                      ; Profiles, for example for different machines or workflows
-│   └── workstation.nix
-├── sets                          ; Sets of packages to install
-│   ├── base
+/nix/config
+├── flake.lock
+├── flake.nix                   ; Master configuration file
+├── overlays                    ; Package overlays
+├── packages                    ; Packages with configurations
+│   ├── nginx
+│   │   └── homeserver.nix
+│   ├── syncthing
+│   │   └── homeserver.nix
+│   └── vim
+│       └── package.nix
+├── pw                          ; Password of your user
+├── sets                        ; Sets of packages 
+│   └── meta
+│       └── sysadmin.nix
+├── systems                     ; System specific configuration
+│   ├── common.nix
+│   ├── hardware                ; Hardware configuration of each system
+│   │   ├── homeserver.nix
+│   │   └── qemu-vm.nix
+│   ├── homeserver.nix
+│   ├── persist                 ; Persistence configuration of each system
 │   │   ├── common.nix
-│   │   ├── devel.nix
-│   │   └── plasma.nix
-│   ├── devel
-│   │   ├── c.nix
-│   │   └── git.nix
-│   ├── drivers
-│   │   ├── nvidia.nix
-│   │   └── tablet.nix
-│   └── graphics
-│       ├── art.nix
-│       └── video.nix
-├── username.nix                   ; Set current user
-└── users                          ; Users
+│   │   ├── homeserver.nix
+│   │   └── qemu-vm.nix
+│   └── qemu-vm.nix
+└── users                       ; User specific configuration
+    ├── media.nix
+    ├── none.nix
     └── user.nix
 ```
-## Todo
-- [ ] Hyprland configuration
-- [ ] Clean up sets directory
-- [ ] Add screenshots to README.md
-- [ ] Home-manager configuration
