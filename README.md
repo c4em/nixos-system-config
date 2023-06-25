@@ -1,3 +1,4 @@
+[Old hyprland config can be found here](https://github.com/c4em/nixos-system-config/tree/deprecated)
 # nixos-system-config
 Modular multi-purpose NixOS configuration.
 
