@@ -9,6 +9,7 @@
         ../packages/vim/package.nix
         ../packages/nginx/homeserver.nix
         ../packages/syncthing/homeserver.nix
+        ../packages/wireguard/package.nix
     ];
 
     boot = {
