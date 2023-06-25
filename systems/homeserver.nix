@@ -38,12 +38,6 @@
                 prefixLength = 24;
             }];
         };
-    };
-
-    time.timeZone = "Europe/Berlin";
-
-    console = {
-        keyMap = "uk";
         nameservers = [ "1.1.1.1" "8.8.8.8" ];
         defaultGateway = "192.168.2.1";
         firewall = {
@@ -51,6 +45,10 @@
             allowedTCPPorts = [ 22 ]; 
         };
     };
+
+    time.timeZone = "Europe/Berlin";
+
+    console.keyMap = "uk";
 
     # To not mess up SSH sessions from weird terminals
     environment.sessionVariables = rec {
