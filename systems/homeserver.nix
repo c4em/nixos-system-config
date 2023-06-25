@@ -10,6 +10,7 @@
         ../packages/nginx/homeserver.nix
         ../packages/syncthing/homeserver.nix
         ../packages/wireguard/package.nix
+        ../packages/deluge/homeserver.nix
     ];
 
     boot = {
