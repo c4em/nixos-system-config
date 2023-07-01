@@ -3,25 +3,22 @@
 {
     imports = [
         ./common.nix
-        ./hardware/homeserver.nix
-        ./persist/common.nix
+        ./hardware/dirae.nix
+#        ./persist/dirae.nix
         ../sets/meta/sysadmin.nix
-        ../packages/vim/package.nix
-        ../packages/nginx/homeserver.nix
-        ../packages/syncthing/homeserver.nix
-        ../packages/wireguard/package.nix
-        ../packages/deluge/homeserver.nix
+	    ../packages/vim/package.nix
+        ../packages/sshd/package.nix
+        ../packages/mailserver/package.nix
+        ../packages/nginx/dirae.nix
+        ../packages/gitlab/package.nix
+        ../packages/synapse/package.nix
     ];
 
     boot = {
         loader = {
-            efi = {
-                canTouchEfiVariables = true;
-            };
             grub = {
                 enable = true;
-                efiSupport = true;
-                device = "nodev";
+                device = "/dev/vda";
             };
         };
 
@@ -31,29 +28,27 @@
     };
 
     networking = {
-        hostName = "homeserver";
+        hostName = "dirae";
         enableIPv6 = false;
-        hostId = "95f846dc";
+        hostId = "149e5b5c";
         interfaces = {
-            eno1.ipv4.addresses = [{
-                address = "192.168.2.69";
+            enp6s18.ipv4.addresses = [{
+                address = "91.210.224.148";
                 prefixLength = 24;
             }];
         };
         nameservers = [ "1.1.1.1" "8.8.8.8" ];
-        defaultGateway = "192.168.2.1";
+        defaultGateway = "91.210.224.1";
         firewall = {
             enable = true;
-            allowedTCPPorts = [ 22 ]; 
         };
     };
 
     time.timeZone = "Europe/Berlin";
-
-    console.keyMap = "uk";
 
     # To not mess up SSH sessions from weird terminals
     environment.sessionVariables = {
         TERM = "xterm";
     };
 }
+

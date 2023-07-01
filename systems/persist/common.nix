@@ -5,7 +5,7 @@
         impermanence.nixosModules.impermanence
     ];
 
-    environment.persistence."/nix/persist/common" = {
+    environment.persistence."/nix/persist" = {
         directories = [
             "/etc/ssh"
             "/var/lib"

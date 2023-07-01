@@ -7,17 +7,30 @@
 
         # https://nixos.wiki/wiki/Impermanence
         impermanence.url = "github:nix-community/impermanence";
+
+        simple-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-23.05";
     };
 
     outputs = { self, nixpkgs, ... }@attrs: let
-        user = "user"; # Select user from `./users` directory
+        user = "user"; # Select user from the `./users` directory
     in {
+        # Media homeserver
         nixosConfigurations.homeserver = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             specialArgs = attrs;
             modules = [ 
                 ./users/${user}.nix
                 ./systems/homeserver.nix
+            ];
+        };
+
+        # dirae.org
+        nixosConfigurations.dirae = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = attrs;
+            modules = [
+                ./users/${user}.nix
+                ./systems/dirae.nix
             ];
         };
 

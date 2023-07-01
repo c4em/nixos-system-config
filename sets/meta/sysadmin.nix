@@ -6,6 +6,7 @@
         wget
         curl
         git
+        tree
     ];
 
     services.openssh.enable = true;

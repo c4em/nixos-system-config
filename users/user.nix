@@ -1,4 +1,4 @@
-{ ... }:
+{  ... }:
 
 {
     users.users.user = {

@@ -6,7 +6,7 @@
         ../sets/meta/sysadmin.nix
         ../packages/vim/package.nix
         ./common.nix
-        ./persist/qemu-vm.nix
+        ./persist/common.nix
     ];
 
     boot.loader.grub.enable = true;
