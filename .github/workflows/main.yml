@@ -20,7 +20,7 @@ jobs:
         git-author-email: 'caem@dirae.org'
         git-committer-name: 'caem'
         git-committer-email: 'caem@dirae.org'
-        pr-title: "Automated: Update flake.lcok"
+        pr-title: "Automated: Update flake.lock"
         pr-labels: |
           dependencies
           automated
