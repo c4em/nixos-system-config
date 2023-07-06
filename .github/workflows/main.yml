@@ -6,7 +6,7 @@ on:
     - cron: "0 8 * * *"
 
 jobs:
-  lockfile:
+  update_lockfile:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -18,8 +18,8 @@ jobs:
       with:
         git-author-name: 'caem'
         git-author-email: 'caem@dirae.org'
-        git-comitter-name: 'caem'
-        git-comitter-email: 'caem@dirae.org'
+        git-committer-name: 'caem'
+        git-committer-email: 'caem@dirae.org'
         pr-title: "Automated: Update flake.lcok"
         pr-labels: |
           dependencies
