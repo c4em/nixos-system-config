@@ -19,7 +19,7 @@
             listen_ports = [ 57597 ];
             max_active_seeding = -1;
             max_active_downloading = 5;
-            max_active_limite = -1;
+            max_active_limit = -1;
         };
     };
 
