@@ -10,7 +10,8 @@
         ../packages/sshd/package.nix
         ../packages/mailserver/package.nix
         ../packages/nginx/dirae.nix
-        ../packages/gitlab/package.nix
+#        ../packages/gitlab/package.nix
+        ../packages/forgejo/dirae.nix
         ../packages/synapse/package.nix
     ];
 

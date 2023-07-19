@@ -1,6 +1,6 @@
 # Common configuration for all systems
 
-{  ... }:
+{ pkgs, ... }:
 
 {
     nix = {

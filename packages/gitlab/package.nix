@@ -8,6 +8,7 @@
         # Server is running on limited budet :,)
         # https://docs.gitlab.com/omnibus/settings/memory_constrained_envs.html
         puma.workers = 0;
+        puma.threadsMax = 1;
 
         user = "gitlab";
         group = "gitlab";

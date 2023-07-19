@@ -20,6 +20,14 @@ in {
         recommendedTlsSettings = true;
 
         virtualHosts = {
+            "caem.dev" = {
+                enableACME = true;
+                forceSSL = true;
+                locations."/" = {
+                    root = "/var/www/caem";
+                };
+            };
+
             "dirae.org" = {
                 enableACME = true;
                 forceSSL = true;
@@ -35,14 +43,19 @@ in {
 
             };
 
-            "gitlab.dirae.org" = {
+            "git.dirae.org" = {
                 enableACME = true;
                 forceSSL = true;
-                locations."/" = {
-                    proxyPass = "http://unix:/run/gitlab/gitlab-workhorse.socket";
-                };
+                locations."/".proxyPass = "http://127.0.0.1:3001";
+            };
 
-             };
+           # "gitlab.dirae.org" = {
+           #     enableACME = true;
+           #     forceSSL = true;
+           #     locations."/" = {
+           #         proxyPass = "http://unix:/run/gitlab/gitlab-workhorse.socket";
+           #     };
+           #  };
         };
     };
 }
