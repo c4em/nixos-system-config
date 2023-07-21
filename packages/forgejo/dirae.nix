@@ -26,22 +26,24 @@ in
                 HTTP_PORT = 3001;
             };
 
-            ui = {
+            "ui" = {
                 THEMES = ''
                     forgejo-auto,forgejo-light,forgejo-dark,auto,gitea,arc-green
                 '';
                 DEFAULT_THEME = "forgejo-dark";
-                user = {
-                    REPO_PAGING_NUM = 50;
-                };
-                meta = {
-                    AUTHOR = "dirae.org Forgejo instance";
-                    DESCRIPTION = "Forgejo instance hosting git repositories for dirae.org";
-                    KEYWORDS = "go,git,self-hosted,gitea,forgejo,foss,oss,decentrialised,federation";
-                };
             };
 
-            repository = {
+            "ui.user" = {
+                REPO_PAGING_NUM = 50;
+            };
+
+            "ui.meta" = {
+                AUTHOR = "dirae.org Forgejo instance";
+                DESCRIPTION = "Forgejo instance hosting git repositories for dirae.org";
+                KEYWORDS = "go,git,self-hosted,gitea,forgejo,foss,oss,decentrialised,federation";
+            };
+
+            "repository" = {
                 DEFAULT_BRANCH = "master";
                 DISABLE_STARS = true;
                 ENABLE_PUSH_CREATE_USER = true;
