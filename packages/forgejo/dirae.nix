@@ -37,7 +37,7 @@ in
                 meta = {
                     AUTHOR = "dirae.org Forgejo instance";
                     DESCRIPTION = "Forgejo instance hosting git repositories for dirae.org";
-                    KEYWORDS = "go,git,self-hosted,gitea,forgejo,foss,oss,decentrialised,federation"
+                    KEYWORDS = "go,git,self-hosted,gitea,forgejo,foss,oss,decentrialised,federation";
                 };
             };
 
