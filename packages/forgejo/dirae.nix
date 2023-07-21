@@ -45,10 +45,10 @@ in
                 DEFAULT_BRANCH = "master";
                 DISABLE_STARS = true;
                 ENABLE_PUSH_CREATE_USER = true;
-                DEFAULT_REPO_UNITS = ''
+                DEFAULT_REPO_UNITS = '';
                     repo.code,repo.releases,repo.issues,repo.pulls
                 '';
-                PREFERRED_LICENSES="GPL-3.0-or-later,AGPL-3.0-or-later"
+                PREFERRED_LICENSES="GPL-3.0-or-later,AGPL-3.0-or-later";
             };
         };
         
