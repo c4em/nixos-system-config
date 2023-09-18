@@ -5,6 +5,9 @@
         enable = true;
         settings = {
             PasswordAuthentication = false;
+            ChallengeResponseAuthentication = false;
+            KbdInteractiveAuthentication = false;
+            UsePAM = false;
         };
     };
 
