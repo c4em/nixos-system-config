@@ -4,11 +4,6 @@
     services.akkoma = {
         enable = true;
 
-        nginx = {
-            enableACME = true;
-            forceSSL = true;
-        };
-
         config = {
             ":pleroma" = {
                 ":instance" = {
