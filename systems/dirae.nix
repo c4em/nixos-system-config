@@ -30,6 +30,7 @@
 
     networking = {
         hostName = "dirae";
+        domain = "dirae.org";
         enableIPv6 = false;
         hostId = "149e5b5c";
         interfaces = {
